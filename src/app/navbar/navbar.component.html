@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a [routerLink]="['/home']" class="nav-link"><i class="fas fa-home"></i></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Exercises
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="['/001']">Exercise 001 (to-do list)</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/002']">Exercise 002 (expense tracker)</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/003']">Exercise 003 (note taker)</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/004']">Exercise 004 (vowel counter)</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/005']">Exercise 005 (memory game)</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

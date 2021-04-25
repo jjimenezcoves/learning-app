@@ -1,0 +1,21 @@
+<div class="container mt-5">
+
+  <h1>TO-DO List</h1>
+
+  <form #addItemForm="ngForm" (ngSubmit)="addItem(addItemForm.value)" class="mb-3">
+    <input type="text" name="text" ngModel placeholder="Add an item!" class="form-control mb-3">
+    <input type="submit" value="Submit" class="btn btn-primary mr-3">
+    <input type="button" value="Clear list" (click)="clearList()" class="btn btn-danger ml-1">
+  </form>
+
+  <ol>
+    <li *ngFor="let item of items; let i = index" class="mb-2">
+      <s *ngIf="item.done">{{item.text}}</s>
+      <span *ngIf="!item.done">{{item.text}}</span>
+      <button (click)="deleteItem(i)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+      <button (click)="markItem(i)" class="btn btn-warning">{{item.done ? 'Undone' : 'Done'}}</button>
+    </li>
+  </ol>
+
+</div>
+

@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <h1>Vowel counter</h1>
+  <form #form="ngForm" (ngSubmit)="checkVowels(form.value)" style="text-align: center;">
+    <input type="text" ngModel name="text" class="form-control" placeholder="Enter a piece of text">
+    <input type="submit" value="Check" class="btn btn-success mt-3">
+  </form>
+</div>
