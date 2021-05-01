@@ -13,14 +13,15 @@ export class E005Component implements OnInit {
   lastCard: number = -1;
   turn: number = 0;
   showAlgorithm: boolean;
+  showGame: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
     // Original deck
     this.cards = [
-      {image: 'assets/img/toastman.jpg', revealed: false, code: 1, solved: false},
-      {image: 'assets/img/toastman.jpg', revealed: false, code: 1, solved: false},
+      {image: 'assets/img/courage.png', revealed: false, code: 1, solved: false},
+      {image: 'assets/img/courage.png', revealed: false, code: 1, solved: false},
       {image: 'assets/img/ren.png', revealed: false, code: 2, solved: false},
       {image: 'assets/img/ren.png', revealed: false, code: 2, solved: false},
       {image: 'assets/img/stimpy.png', revealed: false, code: 3, solved: false},
@@ -30,6 +31,7 @@ export class E005Component implements OnInit {
     this.shuffle();
     // View
     this.showAlgorithm = false;
+    this.showGame = true;
   }
 
   newGame() {
@@ -107,7 +109,13 @@ export class E005Component implements OnInit {
    } // Switch end
   }
 
-  switchView() {
-    this.showAlgorithm = !this.showAlgorithm;
+  onShowGame() {
+    this.showAlgorithm = false;
+    this.showGame = true;
+  }
+
+  onShowAlgorithm() {
+    this.showGame = false;
+    this.showAlgorithm = true;
   }
 }
