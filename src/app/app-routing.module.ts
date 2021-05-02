@@ -6,6 +6,7 @@ import { E003Component } from './exercises/e003/e003.component';
 import { E004Component } from './exercises/e004/e004.component';
 import { E005Component } from './exercises/e005/e005.component';
 import { E006Component } from './exercises/e006/e006.component';
+import { E007Component } from './exercises/e007/e007.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: '003', component: E003Component},
   {path: '004', component: E004Component},
   {path: '005', component: E005Component},
-  {path: '006', component: E006Component}
+  {path: '006', component: E006Component},
+  {path: '007', component: E007Component}
 ];
 
 @NgModule({
