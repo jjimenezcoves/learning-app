@@ -1,26 +1,77 @@
 <div class="container mt-3">
   <h1>Tic tac toe</h1>
-  <p>Turn : {{turn}}</p>
-  <div class="grid mt-5">
-    <div class="row">
-      <div class="col" (click)="cellClicked(0,0)">{{grid[0][0]}}</div>
-      <div class="col" (click)="cellClicked(0,1)">{{grid[0][1]}}</div>
-      <div class="col" (click)="cellClicked(0,2)">{{grid[0][2]}}</div>
-    </div>
-    <div class="row">
-      <div class="col" (click)="cellClicked(1,0)">{{grid[1][0]}}</div>
-      <div class="col" (click)="cellClicked(1,1)">{{grid[1][1]}}</div>
-      <div class="col" (click)="cellClicked(1,2)">{{grid[1][2]}}</div>
-    </div>
-    <div class="row">
-      <div class="col" (click)="cellClicked(2,0)">{{grid[2][0]}}</div>
-      <div class="col" (click)="cellClicked(2,1)">{{grid[2][1]}}</div>
-      <div class="col" (click)="cellClicked(2,2)">{{grid[2][2]}}</div>
-    </div>
+  <p *ngIf="!gameBlocked">Turn: {{turn==1 ? 'X' : 'O'}}</p>
+  <p *ngIf="gameBlocked">PLAYER {{turn==1 ? 'X' : 'O'}} WINS!</p>
+
+  <div class="flex-container">
+      <div
+      *ngFor="let cell of grid; let i = index"
+      class="flex-item"
+      [id]="'cell' + i"
+      (click)="cellClicked(i)"
+      [class.x]="cell == 1"
+      [class.o]="cell == 2"
+      ></div>
   </div>
+
   <div class="row text-center">
-    <div class="col mt-5">
+    <div class="col mt-3">
       <button (click)="newGame()" class="btn btn-primary mb-3">New game</button>
     </div>
   </div>
+
+  <!-- Amazin fireworks! -->
+  <div *ngIf="gameBlocked">
+
+    <!-- Small ones -->
+    <div class="pyro">
+      <div class="before"></div>
+      <div class="after"></div>
+    </div>
+
+    <!-- Big ones -->
+    <div class="firework" id="firework1">
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+    </div>
+    <div class="firework" id="firework2">
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+    </div>
+    <div class="firework" id="firework3">
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+      <div class="explosion"></div>
+    </div>
+  </div>
+
 </div>
