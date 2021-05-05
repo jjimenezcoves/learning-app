@@ -1,7 +1,7 @@
 <div class="container mt-3">
-  <h1>Tic tac toe</h1>
-  <p *ngIf="!gameBlocked">Turn: {{turn==1 ? 'X' : 'O'}}</p>
-  <p *ngIf="gameBlocked">PLAYER {{turn==1 ? 'X' : 'O'}} WINS!</p>
+  <h1>{{'tic_tac_toe' | label}}</h1>
+  <p *ngIf="!gameBlocked">{{'turn' | label}}: {{turn==1 ? 'X' : 'O'}}</p>
+  <p *ngIf="gameBlocked">{{'player_' | label}}{{turn==1 ? 'X' : 'O'}}{{'_wins' | label}}</p>
 
   <div class="flex-container">
       <div
@@ -16,7 +16,7 @@
 
   <div class="row text-center">
     <div class="col mt-3">
-      <button (click)="newGame()" class="btn btn-primary mb-3">New game</button>
+      <button (click)="newGame()" class="btn btn-primary mb-3">{{'new_game' | label}}</button>
     </div>
   </div>
 

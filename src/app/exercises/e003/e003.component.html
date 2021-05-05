@@ -1,21 +1,21 @@
 <div class="container mt-3">
 
-  <h1>Note taker</h1>
-  <h2>Add a new note</h2>
+  <h1>{{'note_taker' | label}}</h1>
+  <h2>{{'add_new_note' | label}}</h2>
 
   <form #noteForm="ngForm" (ngSubmit)="createNote(noteForm.value)" class="form-group mb-5">
-    <label for="note">Note:</label>
-    <textarea name="note" id="note" placeholder="Write your note here" ngModel class="form-control"></textarea>
-    <button class="btn btn-primary mt-3">Add note</button>
+    <label for="note">{{'note' | label}}:</label>
+    <textarea name="note" id="note" placeholder="{{'write_note_here' | label}}" ngModel class="form-control"></textarea>
+    <button class="btn btn-primary mt-3">{{'add_note' | label}}</button>
   </form>
 
   <div class="row">
     <div class="col-md-3 mb-3" *ngFor="let note of notes; let i=index">
       <div class="card" style="width: 18rem;" >
         <div class="card-body">
-          <h5 class="card-title">Note {{i+1}}</h5>
+          <h5 class="card-title">{{'note' | label}} {{i+1}}</h5>
           <p class="card-text">{{note.slice(0,10)}}...</p>
-          <a (click)="viewNote(i)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View detail</a>
+          <a (click)="viewNote(i)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">{{'view_detail' | label}}</a>
         </div>
       </div>
     </div>
@@ -26,14 +26,14 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Note {{noteToShow+1}}</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{{'note' | label}} {{noteToShow+1}}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           {{notes[noteToShow]}}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'close' | label}}</button>
         </div>
       </div>
     </div>

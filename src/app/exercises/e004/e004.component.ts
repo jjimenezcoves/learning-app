@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LabelPipe } from 'src/app/internationalization/label.pipe';
 
 @Component({
   selector: 'app-e004',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class E004Component {
 
-  constructor() { }
+  constructor( private labelPipe: LabelPipe) { }
 
   checkVowels(data:any) {
     let text:string = data.text;
@@ -22,7 +23,7 @@ export class E004Component {
         total++;
       }
     }
-    alert("There are " + total + " vowels!");
+    alert(this.labelPipe.transform('there_are') + total + this.labelPipe.transform('vowels'));
   }
 
 }

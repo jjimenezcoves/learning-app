@@ -11,7 +11,7 @@
   <div class="container-fluid">
     <div id="navbarSupportedContent">
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 order-1">
 
         <!-- Home -->
         <li class="nav-item">
@@ -21,21 +21,36 @@
         <!-- Exercises -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Exercises
+            {{'exercises' | label}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" [routerLink]="['/001']">Exercise 001 (to-do list)</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/002']">Exercise 002 (expense tracker)</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/003']">Exercise 003 (note taker)</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/004']">Exercise 004 (vowel counter)</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/005']">Exercise 005 (memory game)</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/006']">Exercise 006 (timer)</a></li>
-            <li><a class="dropdown-item" [routerLink]="['/007']">Exercise 007 (tic tac toe)</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/001']">001 {{'to_do_list' | label}}</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/002']">002 {{'expense_tracker' | label}}</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/003']">003 {{'note_taker' | label}}</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/004']">004 {{'vowel_counter' | label}}</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/005']">005 {{'memory_game' | label}}</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/006']">006 {{'timer' | label}}</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/007']">007 {{'tic_tac_toe' | label}}</a></li>
           </ul>
         </li>
-
+        <li>
+          <a class="nav-link flag"><img src="../../assets/img/flags/spain.png" alt="spain_flag" (click)="setLanguage('es')"></a>
+        </li>
+        <li>
+          <a class="nav-link flag"><img src="../../assets/img/flags/united-kingdom.png" alt="uk_flag" (click)="setLanguage('en')"></a>
+        </li>
       </ul>
-
     </div>
   </div>
 </nav>
+
+
+<!-- Para cuando me anime a hacerlo en flexbox -->
+<!-- <div class="navbar">
+  <div class="item">
+    <a [routerLink]="['/home']" class="nav-link"><i class="fas fa-home"></i></a>
+  </div>
+  <div class="item">
+
+  </div>
+</div> -->

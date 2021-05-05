@@ -1,7 +1,7 @@
 <div class="container mt-3">
-  <h1>Vowel counter</h1>
+  <h1>{{'vowel_counter' | label}}</h1>
   <form #form="ngForm" (ngSubmit)="checkVowels(form.value)" style="text-align: center;">
-    <input type="text" ngModel name="text" class="form-control" placeholder="Enter a piece of text">
-    <input type="submit" value="Check" class="btn btn-success mt-3">
+    <input type="text" ngModel name="text" class="form-control" placeholder="{{'enter_text_piece' | label}}">
+    <input type="submit" value="{{'check' | label}}" class="btn btn-success mt-3">
   </form>
 </div>

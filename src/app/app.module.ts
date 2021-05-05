@@ -7,6 +7,7 @@ import { ExcercisesModule } from './exercises/excercises.module';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     ExcercisesModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [
+
+  ],
+  exports: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
