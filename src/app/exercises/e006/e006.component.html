@@ -1,13 +1,15 @@
 <div class="container mt-3">
-  <div class="row text-center">
+  <div class="row">
     <div class="col">
       <h1>{{'timer' | label}}</h1>
+      <hr>
     </div>
+  </div>
+  <div class="row text-center">
     <div class="col">
-      <button class="btn btn-success" (click)="cronometro()">{{'chronometer' | label}}</button>
-    </div>
-    <div class="col">
+      <button class="btn btn-success firstbtn" (click)="cronometro()">{{'chronometer' | label}}</button>
       <button class="btn btn-success" (click)="cuentaAtras()">{{'countdown' | label}}</button>
+      <hr>
     </div>
   </div>
 </div>
